@@ -1,4 +1,4 @@
-let moment = require('moment'); // time library
+import moment from 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js'; // time library
 moment().format(); 
 
 console.log("Hello World!");
