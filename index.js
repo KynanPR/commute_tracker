@@ -1,5 +1,6 @@
 import moment from 'moment';
-moment().format();
+
+//moment().format();
 
 console.log("Hello World!");
 
