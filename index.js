@@ -19,7 +19,7 @@ class Commute {
         this.journeys = {};
     }
     newJourney() {
-        const journeyDate =  now.toDateString().substring(0, 10);
+        const journeyDate =  now.toISOString().substring(0, 10);
         const newJourney = new Journey(this.stopNames);
         this.journeys[journeyDate] = newJourney;
     }
