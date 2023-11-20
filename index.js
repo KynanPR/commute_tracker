@@ -1,6 +1,6 @@
 console.log("Hello World!");
 
-const startTimer = document.getElementById('start-buton');
+const startTimer = document.getElementById('start-button');
 
 function logTime(element) {
     const elementID = element.id;
