@@ -1,6 +1,6 @@
 console.log("Hello World!");
 
-const now = new Date()
+const now = new Date();
 
 const startTimer = document.getElementById('start-button');
 
