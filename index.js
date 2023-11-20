@@ -1,6 +1,8 @@
+import moment from 'moment';
+moment().format();
+
 console.log("Hello World!");
 
-const now = new Date();
 const commuteName = 'My Commute';
 const commuteStops = ['outLeftHome', 'outTramStop', 'outOnTram', 'outOffTram', 'outArrivedWork'];
 
@@ -19,11 +21,21 @@ class Commute {
         this.journeys = {};
     }
     newJourney() {
+        now = new Date()
         const journeyDate =  now.toISOString().substring(0, 10);
         const newJourney = new Journey(this.stopNames);
         this.journeys[journeyDate] = newJourney;
     }
-    
+    incrementStop(journeyDate) {
+        now = new Date()
+        const startState = this.journeys[journeyDate];
+        const nextStopIndex = Object.values(startState).indexOf(null);
+        const nextStopName = Object.keys(startState)[nextStopIndex];
+
+        this.journeys[journeyDate][nextStopName] = now.ge
+
+
+    }
 }
 
 const startTimer = document.getElementById('start-button');
