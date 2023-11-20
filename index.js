@@ -1,7 +1,15 @@
-console.log("Hello World!")
+console.log("Hello World!");
 
-const currentDate = new Date()
+const startTimer = document.getElementById('start-buton');
 
-function logTime() {
-    console.log(currentDate.toISOString())
+function logTime(element) {
+    const elementID = element.id;
+    const currentDateTime = Date().toISOString()
+    console.log(`Element ID: ${elementID} DateTime: ${currentDateTime}`)
 }
+
+startTimer.addEventListener('click', (event) => {
+    const buttonElement = event.target;
+    logTime(buttonElement)
+});
+
