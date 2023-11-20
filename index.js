@@ -44,7 +44,6 @@ function logTime(calledElement) {
     const elementID = calledElement.id;
     const currentDateTime = now.toISOString()
     console.log(`Element ID: ${elementID} DateTime: ${currentDateTime}`)
-    let
 }
 
 startTimer.addEventListener('click', (event) => {
