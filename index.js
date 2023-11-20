@@ -1,6 +1,5 @@
-import moment from 'moment';
-
-//moment().format();
+let moment = require('moment'); // time library
+moment().format(); 
 
 console.log("Hello World!");
 
