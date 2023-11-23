@@ -39,11 +39,8 @@ class Commute { // The top level object with the invariant properties of a commu
         this.locations = [];
         this.journeys = [];
     }
-    newJourney() {
-        now = new Date() // TODO moment
-        const journeyDate =  now.toISOString().substring(0, 10); // TODO moment
-        const newJourney = new Journey(this.stopNames);
-        this.journeys[journeyDate] = newJourney;
+    newJourney(locations) {
+        this.locations.push(new Journey(locations));
     }
     incrementStop(journeyDate) { // TODO move to Journey
         now = new Date();// TODO moment
