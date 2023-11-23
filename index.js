@@ -17,12 +17,8 @@ class Location { // a location is a point along the commute journey that will be
 class Stop { // Created as part of a journey init, takes a specified location object and creates an instance of it with the timestamp for that journey
     constructor(location) {
         this.location = location; // In case the parent Location object needs to be accessed later
-        this.stopIndex = null; // For tracking which number this stop is in a journey. Init to null, set by the setStopNo method, called by Journey init
         this.name = location.StopName;
         this.arrivedAt = null; // Initially null so it can be set during the journey
-    }
-    setStopIndex(stopNo) {
-        this.stopIndex = stopNo;
     }
     // TODO set arrivedAt method
 }
@@ -32,14 +28,7 @@ class Journey { // A specific instance as part of a Commute with given Locations
         // TODO check there are at least 2 Locations and they are destinations
         // DOCS - Can only have 1 journey per day
         this.date = moment().format('YYYY-MM-DD'); // Serves as an identifier for the journey
-        this.stops = []; // Init array of stops
-
-        let stopIndex = 0;
-        locations.forEach(location => { // Create and init a stop for each location
-            stopFromLocation = new Stop(location); // Create new Stop from the Location object
-            stopFromLocation.setStopIndex(stopIndex);
-            this.stops.push(stopFromLocation); // Add that Stop to the array
-        });
+        this.stops = locations.map(location => new Stop(location)); // Create an array with a Stop object for each location
     }
     // TODO incrementStop method
 }
