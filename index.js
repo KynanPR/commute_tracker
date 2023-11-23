@@ -45,7 +45,7 @@ class Journey { // A specific instance as part of a Commute with given Locations
     // TODO incrementStop method
 }
 
-class Commute { // The top level object with the invariant properties of a commute. eg. Home/Work Locations, Name of commute, Locations available for Journies
+class Commute { // The top level object with the invariant properties of a commute. eg. Home/Work Locations, Name of commute, Locations available for Journys
     constructor(name) {
         this.name = name;
         this.locations = [];
