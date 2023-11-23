@@ -41,6 +41,8 @@ class Journey { // A specific instance as part of a Commute with given Locations
             return this.stops.findIndex(stop => stop.arrivedAt === null) - 1 // null is next Stop so previous is our current Stop
         }
     }
+    incrementStop() {
+        return null
     }
     // TODO incrementStop method
 }
