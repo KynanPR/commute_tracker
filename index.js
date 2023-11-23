@@ -29,6 +29,18 @@ class Journey { // A specific instance as part of a Commute with given Locations
         // DOCS - Can only have 1 journey per day
         this.date = moment().format('YYYY-MM-DD'); // Serves as an identifier for the journey
         this.stops = locations.map(location => new Stop(location)); // Create an array with a Stop object for each location
+        this.boolStarted = false;
+        this.boolComplete = false;
+    }
+    getCurrentStopIndex() {
+        if (this.boolComplete) { // Check if the Journey is flagged as completed
+            return this.stops.length() - 1 // Final Stop index
+        } else if (!this.boolStarted) { // Check if Journey not started yet
+            return null // Must be first stop
+        } else { // If not started and not completed, we're mid Journey
+            return this.stops.findIndex(stop => stop.arrivedAt === null) - 1 // null is next Stop so previous is our current Stop
+        }
+    }
     }
     // TODO incrementStop method
 }
