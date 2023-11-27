@@ -108,7 +108,7 @@ class Commute {
 
 	// Create a new Journey. Providing an array of locations that will make it up
 	newJourney(locations) {
-		this.locations.push(new Journey(locations));
+		this.journeys.push(new Journey(locations));
 	}
 
 	// TODO addLocation method
