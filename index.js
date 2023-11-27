@@ -1,5 +1,3 @@
-const moment = require("moment");
-
 moment().format();
 
 console.log("Hello World!");
